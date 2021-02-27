@@ -47,11 +47,14 @@ if __name__ == "__main__":
     virvac = read_csv_file("side-by-side.csv")[1:]
 
     matches = 0
-    for element in virvac:
-        _, vir, vac = element
-        our = substitutions.get(
-            vir, vir
-        )  # stop codons are not encoded, just return stop codon
-        if vac == our:
-            matches += 1
-    print("{:.1f}%".format(100 * matches / len(virvac)))
+    with open("sample_solution_diff.txt", "w") as f:
+        for element in virvac:
+            _, vir, vac = element
+            our = substitutions.get(
+                vir, vir
+            )  # stop codons are not encoded, just return stop codon
+            if vac == our:
+                matches += 1
+            f.write(f"{_},{our},{vac}\n")
+
+        print("{:.1f}%".format(100 * matches / len(virvac)))
