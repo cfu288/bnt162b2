@@ -19,12 +19,12 @@ def generate_codon_mapping_from_aa_mapping(codons_table) -> Dict:
         codons = sorted(frequency_table)
         max_frequency = 0
         most_frequent_codon = None
-        for codon in codons:
-            frequency = frequency_table[codon]
+        for c1 in codons:
+            frequency = frequency_table[c1]
             if frequency > max_frequency:
                 max_frequency = frequency
-                most_frequent_codon = codon
-        for codon in codons:
+                most_frequent_codon = c1
+        for c1 in codons:
             substitutions[codon] = most_frequent_codon
     return substitutions
 
@@ -39,6 +39,8 @@ for _, k, v in vir_vac_combos:
 if __name__ == "__main__":
     substitutions = generate_codon_mapping_from_aa_mapping(most_frequent_codon_map)
     virvac = read_csv_file("side-by-side.csv")[1:]
+
+    print(substitutions)
 
     matches = 0
     for element in virvac:
