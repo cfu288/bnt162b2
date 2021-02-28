@@ -29,7 +29,7 @@ def generate_codon_mapping_from_aa_mapping(codons_table) -> Dict:
     return substitutions
 
 
-vir_vac_combos = read_csv_file("side-by-side.csv")[1:]
+vir_vac_combos = read_csv_file("../side-by-side.csv")[1:]
 # Generate a default dict with each amino acid and a list the most common swaps from the vaccine
 most_frequent_codon_map = defaultdict(Counter)
 for _, k, v in vir_vac_combos:
@@ -38,9 +38,7 @@ for _, k, v in vir_vac_combos:
 
 if __name__ == "__main__":
     substitutions = generate_codon_mapping_from_aa_mapping(most_frequent_codon_map)
-    virvac = read_csv_file("side-by-side.csv")[1:]
-
-    print(substitutions)
+    virvac = read_csv_file("../side-by-side.csv")[1:]
 
     matches = 0
     for element in virvac:
