@@ -1,5 +1,10 @@
-from collections import defaultdict
+"""
+Simple swapping algorithm that attempts to swap codons with ones that are found
+to be found in more stable mRNA strands.
+"""
+
 import csv
+from collections import defaultdict
 from typing import Dict
 
 import python_codon_tables

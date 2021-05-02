@@ -1,4 +1,8 @@
-from collections import defaultdict
+"""
+Experiment using a "rolling average" to only do G/C inserts if the GC ratio 
+is below a certain percent.
+"""
+
 import csv
 from typing import Dict
 

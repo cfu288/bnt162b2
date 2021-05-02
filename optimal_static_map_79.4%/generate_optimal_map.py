@@ -1,8 +1,14 @@
-from collections import defaultdict
-import csv
-from typing import Counter, Dict
+"""
+A simple algorithm that determines the maximum possible score that can be
+achieved using a simple static swapping algorithm. This gives us an upper
+bound on how effective this type of algorithm can be, and indicates that
+we may want to reach for something more sophisticated to break the 79.4%
+barrier.
+"""
 
-import python_codon_tables
+import csv
+from collections import defaultdict
+from typing import Counter, Dict
 
 
 def read_csv_file(file_path):
